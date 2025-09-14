@@ -10,8 +10,8 @@ resource "zedcloud_model" "QEMU_VM" {
   origin_type = "ORIGIN_LOCAL"
   brand_id    = zedcloud_brand.QEMU.id
   attr = {
-    "Cpus"    = "4"
-    "memory"  = "4096M"
+    "Cpus"    = "8"
+    "memory"  = "16384M"
     "storage" = "100G"
   }
   product_status = "production"
