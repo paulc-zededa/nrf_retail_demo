@@ -4,6 +4,21 @@ variable "onboarding_key" {
   default     = "5d0767ee-0547-4569-b530-387e526f8cb9"
 }
 
+ resource "zedamigo_bridge" "br1000" {
+  name         = "test-br-1000"
+  mtu          = "1500"
+  state        = "up"
+  ipv4_address = "172.27.199.129/25"
+}
+
+resource "zedamigo_tap" "tap1000" {
+  name   = "test-tap-1000"
+  mtu    = "1500"
+  state  = "up"
+  group  = "kvm"
+  master = zedamigo_bridge.br1000.name
+}
+
 resource "zedcloud_network" "edge_node_as_dhcp_client" {
   name        = "edge_node_as_dhcp_client_${var.config_suffix}"
   title       = "edge_node_as_dhcp_client"
@@ -112,5 +127,6 @@ resource "zedamigo_edge_node" "ENODE_TEST_VM_AAAA" {
   serial_port_server = true
   disk_image_base    = zedamigo_installed_edge_node.ENODE_TEST_INSTALL_AAAA.disk_image
   ovmf_vars_src      = zedamigo_installed_edge_node.ENODE_TEST_INSTALL_AAAA.ovmf_vars
+  nic0               = "tap,id=net0,ifname=test-tap-1000,script=no,downscript=no,model=virtio"
 }
 
