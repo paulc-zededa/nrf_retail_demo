@@ -126,6 +126,6 @@ resource "zedamigo_edge_node" "ENODE_TEST_VM_AAAA" {
   serial_port_server = true
   disk_image_base    = zedamigo_installed_edge_node.ENODE_TEST_INSTALL_AAAA.disk_image
   ovmf_vars_src      = zedamigo_installed_edge_node.ENODE_TEST_INSTALL_AAAA.ovmf_vars
-  nic0               = "tap,id=net0,ifname=test-tap-1000,script=no,downscript=no,model=virtio"
+  nic0               = "tap,id=net0,ifname=test-tap-2000,script=no,downscript=no,model=virtio"
 }
 
