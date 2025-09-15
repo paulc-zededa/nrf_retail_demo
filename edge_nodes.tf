@@ -120,8 +120,8 @@ resource "zedamigo_installed_edge_node" "ENODE_TEST_INSTALL_AAAA" {
 #### produced by VM on it's serial console.
 resource "zedamigo_edge_node" "ENODE_TEST_VM_AAAA" {
   name               = "ENODE_TEST_VM_AAAA_${var.config_suffix}"
-  cpus               = "4"
-  mem                = "4G"
+  cpus               = "8"
+  mem                = "16G"
   serial_no          = zedamigo_installed_edge_node.ENODE_TEST_INSTALL_AAAA.serial_no
   serial_port_server = true
   disk_image_base    = zedamigo_installed_edge_node.ENODE_TEST_INSTALL_AAAA.disk_image
