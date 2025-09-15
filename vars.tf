@@ -19,6 +19,6 @@ variable "edge_node_ssh_pub_key" {
 # ensure that.
 variable "config_suffix" {
   type    = string
-  default = "20250914"
+  default = "20250915"
 }
 

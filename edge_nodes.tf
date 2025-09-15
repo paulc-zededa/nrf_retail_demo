@@ -5,13 +5,13 @@ variable "onboarding_key" {
 }
 
  resource "zedamigo_bridge" "br1000" {
-  name         = "test-br-1000"
+  name         = "test-br-2000"
   mtu          = "1500"
   state        = "up"
 }
 
 resource "zedamigo_tap" "tap1000" {
-  name   = "test-tap-1000"
+  name   = "test-tap-2000"
   mtu    = "1500"
   state  = "up"
   group  = "kvm"
