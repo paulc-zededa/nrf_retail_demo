@@ -8,7 +8,7 @@ variable "onboarding_key" {
   name         = "test-br-1000"
   mtu          = "1500"
   state        = "up"
-  pv4_address  = "192.168.69.100/22"
+  ipv4_address  = "192.168.69.100/22"
 }
 
 resource "zedamigo_tap" "tap1000" {
