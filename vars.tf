@@ -12,7 +12,7 @@ variable "edge_node_ssh_pub_key" {
   description = "Enable edge-node SSH access with the provided SSH public key"
   sensitive   = true
   type        = string
-  default     = ""
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDQWQbTg18CuiRnjZmNwe84+KldkBYjya7x93agIX6UF pcarvill@eveserver"
 }
 
 # Objects in Zedcloud need to have unique names. This variable can be used to
